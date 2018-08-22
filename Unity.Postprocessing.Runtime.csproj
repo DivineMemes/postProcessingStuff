@@ -356,6 +356,7 @@
     <Compile Include="Assets\PostProcessing-2\PostProcessing\Runtime\Utils\XRSettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ImportedAssets\Cinemachine\ReleaseNotes.txt" />
     <None Include="Assets\ImportedAssets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\ImportedAssets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\ImportedAssets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

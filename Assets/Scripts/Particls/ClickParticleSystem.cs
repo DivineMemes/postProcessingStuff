@@ -8,22 +8,22 @@ public class ClickParticleSystem : MonoBehaviour
     public Gradient particleColorGradient;
     public Vector3 ScreenPoint;
 
-    List<ParticleCollisionEvent> collisionEvents;
+    //List<ParticleCollisionEvent> collisionEvents;
 
     void Start ()
     {
-        collisionEvents = new List<ParticleCollisionEvent>();
+        //collisionEvents = new List<ParticleCollisionEvent>();
 	}
 
-    void OnParticleCollision(GameObject other)
-    {
-        ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, collisionEvents);
-        for(int i = 0; i < collisionEvents.Count; i++)
-        {
-            other.gameObject.GetComponent<Health>().health -= .001f;
+    //void OnParticleCollision(GameObject other)
+    //{
+    //    ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, collisionEvents);
+    //    for(int i = 0; i < collisionEvents.Count; i++)
+    //    {
+    //        other.gameObject.GetComponent<Health>().health -= .001f;
 
-        }
-    }
+    //    }
+    //}
 
     void Awake()
     {
@@ -40,7 +40,7 @@ public class ClickParticleSystem : MonoBehaviour
             ParticleSystem.MainModule psMain = particleLauncher.main;
             psMain.startColor = particleColorGradient.Evaluate(Random.Range(0, 1));
             particleLauncher.transform.position = pPoint;
-            particleLauncher.Emit(100);
+            particleLauncher.Emit(5);
         }
 	}
 }

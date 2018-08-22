@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class DamageOnCollision : MonoBehaviour
 {
-
-	// Use this for initialization
-	void Start ()
+    public ParticleSystem particleLauncher;
+    List<ParticleCollisionEvent> collisionEvents;
+    void Start ()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        collisionEvents = new List<ParticleCollisionEvent>();
+    }
+    void OnParticleCollision(GameObject other)
     {
-		
-	}
+        ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, collisionEvents);
+        for (int i = 0; i < collisionEvents.Count; i++)
+        {
+            gameObject.GetComponent<Health>().health -= .001f;
+        }
+    }
 }
